@@ -1,0 +1,47 @@
+[project]
+name = "recsys-tbank"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "SwanGibbon", email = "SwanGibbon@gmail.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "anthropic>=1.15.0",
+    "catboost>=1.2.10",
+    "duckdb>=1.5.6",
+    "huggingface-hub>=2.2.0",
+    "implicit>=0.7.3",
+    "lightgbm>=4.7.0",
+    "matplotlib>=3.11.2",
+    "numpy",
+    "optuna>=5.0.0",
+    "polars>=2.0.0",
+    "psutil>=7.2.2",
+    "pyarrow",
+    "pyyaml>=6.0.3",
+    "scipy",
+    "torch>=2.14.1",
+    "torch-geometric>=2.8.1",
+]
+
+[project.scripts]
+recsys-tbank = "recsys_tbank:main"
+
+[build-system]
+requires = ["uv_build>=0.12.4,<0.13.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "jupyterlab>=4.6.4",
+    "pytest>=9.1.1",
+    "ruff>=0.17.1",
+]
+
+[tool.uv.workspace]
+members = []
+
+[tool.ruff]
+extend-exclude = ["*.ipynb"]
